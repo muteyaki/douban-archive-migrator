@@ -12,10 +12,16 @@
 ## 准备
 1. 安装依赖：`pip install -r requirements.txt`。如用 Playwright，额外执行 `playwright install`。
 2. 设置环境变量：
-   - `DOUBAN_COOKIE`：浏览器登录豆瓣后的 Cookie 字符串。可通过开发者工具获取，只需要在浏览douban页面时打开：
+   - `DOUBAN_COOKIE`：浏览器登录豆瓣后的 Cookie 字符串。
+      可以尝试使用 [Reqable project](https://github.com/reqable/reqable-app) 获取cookie。
+
+      如果觉得有一些困难，也可以通过开发者工具获取，只需要在浏览douban页面时打开：
       ![Douban cookie获取](fig/fig1.png)
+
    - `DOUBAN_USER_ID`：你的豆瓣 people ID。打开个人主页上copy url中的内容：
+   
       ![douban user id获取](fig/fig2.png)
+
    - `QWEN_API_KEY`：Qwen api key ；需自己申请自定义，也可以换其他的LLM（但是调用接口需要改），阿里的通义api key申请可见： [通义api申请](https://dashscope.console.aliyun.com/)。
 3. 映射文件（发布用，通过search.py自动匹配，*但是需要人工check，很容易搜到summary之类的条目）：
    - `goodreads_targets.json`：`[{"subject_url": "https://book.douban.com/subject/xxx/", "target_url": "https://www.goodreads.com/book/show/123"}]`
